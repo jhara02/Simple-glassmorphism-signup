@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family:'cormorant garamond';
+}
+
+body{
+    display:flex;
+    height: 150vh;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    background: linear-gradient(332deg, #fd5d5d, #9ADCFF);
+}
+
+.container{
+    max-width: 700px;
+    width:100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+     border: 1px solid rgba(255, 255, 255, 0.3);
+    padding:30px 30px;
+    border-radius: 10px;
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    font-family:'acme';
+    position:relative;
+    margin: 10% 0 15% 0 ;  
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 75px;
+    background:linear-gradient(332deg, #fd5d5d, #9ADCFF);
+}
+
+p{
+    text-align: center;
+    margin:10% 0 10% 0;
+    font-family: Georgia;
+    font-weight: bold;
+}
+
+.container form .user-details{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 50px 10px 100px;
+}
+
+form .user-details .input-box{
+    resize: horizontal;
+    width:200px;
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: bold;
+    font-family: 'cormorant garamond';
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.user-details .input-box input{
+    height: 35px;
+    width: 200px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box:active,
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color:#B93160;
+    min-width: 200px;
+    width: auto;
+}
+
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form .gender-details .category{
+    display:inline-flex;
+    width:80%;
+    margin:20px 0 30px 0;
+    justify-content: space-between;
+}
+
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 18px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color: #d9d9d9;
+    background: #B93160;
+}
+
+form input[type="radio"]{
+    display:none;
+}
+
+form .button{
+    display: inline;
+    height:45px;
+    width: 100px;
+}
+
+form .button input{
+    height:100%;
+    width:100%;
+    outline: none;
+    color: #231955;
+    font-family: 'acme';
+    font-weight: 500;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+   text-align: center;
+    background: linear-gradient(332deg, #fd5d5d,  #F65A83,#2A0944);
+}
+
+form .button input:hover{
+    background: linear-gradient(-332deg, #fd5d5d, #2A0944);
+}
+
+@media(max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+
+    form.user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .gender-details .category{
+        width:100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    
+}
